@@ -11,19 +11,21 @@ import java.io.OutputStreamWriter;
 public class MysqlUtil {
  
     public static void backup(String mysqlPath, String backupfile) throws IOException {
-        String commandFormat = "\"%s/bin/mysqldump\" -u%s -p%s   -hlocalhost   -P%d %s -r \"%s\"";
- 
-        String command = String.format(commandFormat, mysqlPath, DBUtil.loginName, DBUtil.password, DBUtil.port,
-                DBUtil.database, backupfile);
+//        String commandFormat = "\"%s/bin/mysqldump\" -u%s -p%s   -hlocalhost   -P%d %s -r \"%s\"";
+//        String command = String.format(commandFormat, mysqlPath, DBUtil.loginName, DBUtil.password, DBUtil.port,
+//                DBUtil.database, backupfile);
+//        System.out.println(command);
+        String command = "/usr/bin/mysqldump -ulcc -plcc123456   -hlocalhost   -P3306 hutubill -r /home/leo/hutubill.sql";
         Runtime.getRuntime().exec(command);
     }
  
     public static void recover(String mysqlPath, String recoverfile) {
         try {
-            String commandFormat = "\"%s/bin/mysql.exe\" -u%s -p%s   %s ";
-            String command = String.format(commandFormat, mysqlPath, DBUtil.loginName, DBUtil.password,
-                    DBUtil.database);
- 
+//            String commandFormat = "\"%s/bin/mysql.exe\" -u%s -p%s   %s ";
+//            String command = String.format(commandFormat, mysqlPath, DBUtil.loginName, DBUtil.password,
+//                    DBUtil.database);
+//            System.out.println(command);
+            String command = "/usr/bin/mysql -ulcc -plcc123456   hutubill ";
             Process p = Runtime.getRuntime().exec(command);
             OutputStream out = p.getOutputStream();
             String inStr;
