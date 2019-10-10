@@ -1,4 +1,7 @@
 package gui.panel;
+/**
+ * …Ë÷√√Ê∞Â
+ */
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;

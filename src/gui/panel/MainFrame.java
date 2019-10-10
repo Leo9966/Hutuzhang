@@ -1,11 +1,13 @@
 package gui.panel;
-
+/**
+ * 主面板
+ */
 import javax.swing.JFrame;
 
 public class MainFrame extends JFrame{
 	private static final long serialVersionUID = 1L;
 	public static MainFrame instance = new MainFrame();
-	
+
 	private MainFrame(){
 		//设置窗体大小
 		this.setSize(500,450);

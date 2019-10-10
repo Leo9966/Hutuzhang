@@ -1,4 +1,7 @@
 package gui.panel;
+/**
+ * 主面板的几个按钮
+ */
 
 import java.awt.BorderLayout;
 
